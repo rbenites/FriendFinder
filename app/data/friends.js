@@ -1,9 +1,9 @@
 /* jshint esversion: 6 */
-let mysql = require("mysql");
-let path = require("path");
-let bodyParser = require("body-parse");
+const mysql = require("mysql");
+const path = require("path");
+const bodyParser = require("body-parse");
 
-let questions = [
+const questions = [
     "Your mind is always buzzing with unexplored ideas and plans.",
     "Generally speaking, you rely more on your experience than your imagination.",
     "You find it easy to stay relaxed and focused even when there is some pressure.",
@@ -17,16 +17,16 @@ let questions = [
 ];
 
 for (let i = 0; i < questions.length; i++) {
-    const e = questions[i];
-    let survey = $("#questions");
-    let $div = $("<div>").addClass("form-group");
-    let $label = $("<label>").attr("for", "question" + i);
-    let $select = $("<select>").addClass("form-control").attr("id", "question" + i);
-    let options =
+    const question = questions[i];
+    const survey = $("#questions");
+    const $div = $("<div>").addClass("form-group");
+    const $label = $("<label>").attr("for", "question" + i);
+    const $select = $("<select>").addClass("form-control").attr("id", "question" + i);
+    const options =
         `<option>1 (Strongly Disagree)</option>
-        <option>2</option>
-        <option>3 (King of Agree)</option>
-        <option>4</option>
+        <option>2(Disagree)</option>
+        <option>3 (So-So)</option>
+        <option>4(Agree)</option>
         <option>5 (Strongly Agree)</option>`;
 
     $select.append(options);
